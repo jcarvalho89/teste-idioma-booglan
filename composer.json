@@ -1,0 +1,17 @@
+{
+    "name": "josianoc/booglan",
+    "description": "Dicionario Booglan em php",
+    "license": "MIT",
+    "authors": [{
+        "name": "Josiano Carvalho",
+        "email": "josiano.sc@hotmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+          }
+    },
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
