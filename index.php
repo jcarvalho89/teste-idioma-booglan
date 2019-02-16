@@ -14,7 +14,7 @@ $texto_b= file_get_contents('./texto-b.txt');
 
 //trocar a variável de acordo com texto
 
-$booglan= new Booglan($texto_b);
+$booglan= new Booglan($texto_a);
 
 //$total=$booglan->totalizador();
 

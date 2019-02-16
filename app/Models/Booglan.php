@@ -101,33 +101,34 @@ class Booglan
     //twhzkdfvcjxlrnqmgpsb -- alfabeto Booglan em ordem alfabetica
     public function listaVocabulario()
     {
-        $strings = explode(" ", $this->texto);
-        $strings = array_unique($strings); //remove palavras duplicadas
+        $strings_to_array = explode(" ", $this->texto);
+        $strings_to_array_unique = array_unique($strings_to_array); //remove strings duplicadas
 
-        print_r($strings);
+        usort($strings_to_array_unique, array($this, "comparacao"));
 
-        $sortOrder = $this->alfabeto;
-
-        return usort($strings, array($this, "comparacao"));
+        echo implode(" ", $strings_to_array_unique);
 
     }
 
     public function ordenacao($c)
     {
         $pos = array_search($c, $this->alfabeto);
-        return $pos !== false ? $pos : 99999;
+        if ($pos !== false) {
+            return $pos;
+        } else {
+            return -1;
+        }
+
     }
 
     public function comparacao($a, $b)
     {
 
-        if ($this->ordenacao($a[0]) < $this->ordenacao($b[0])) {
-            return -1;
-        } elseif ($this->ordenacao($a[0]) == $this->ordenacao($b[0])) {
+        if ($this->ordenacao($a[0]) == $this->ordenacao($b[0])) {
             return 0;
-        } else {
-            return 1;
         }
+        return ($this->ordenacao($a[0]) < $this->ordenacao($b[0])) ? -1 : 1;
+
     }
 
 }
