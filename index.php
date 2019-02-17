@@ -16,9 +16,9 @@ $texto_b= file_get_contents('./texto-b.txt');
 
 $booglan= new Booglan($texto_a);
 
-//$total=$booglan->totalizador();
+$total=$booglan->totalizador();
 
-$total =$booglan->listaVocabulario();
+//$total =$booglan->contaNumerosBonitos();
 
 print_r($total);
  //$resultado_preposicao= $booglan->preposicoes('twkwv');
